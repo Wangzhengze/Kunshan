@@ -1,0 +1,113 @@
+1.实例变量和局部变量的异同
+实例变量：该变量被该对象中的所有方法（行为）共同拥有，
+            该对象中的所有方法都可以更改该变量的值；
+	        成员变量的作用域是整个对象。成员变量所处的代码块是整个类的范围。
+  局部变量：方法中的声名的变量或者某个代码块中声名的变量；
+            局部变量的作用域是该变量所处的代码块范围内有效。
+			
+
+2.逻辑操作符&&和位运算符&区别
+ 
+  最终结果一样。
+   &&具有短路效果。左边是false，右边不执行。
+   &是无论左边是false还是true,右边都会执行 
+
+3.怎么更快的计算65536除以8
+   0000 0001 0000 0000 0000 0000  >>3
+      0000 000 0001 0000 0000 0000 0  2^13
+  
+4.在 Java 中，给定某程序的 main ，如下，运行结果为（）。
+public static void main(String [ ]args) { 
+	int i = 0;  
+	System.out.print(i++) ; 
+	System.out.print(++i) ; 
+} 
+0
+2
+5. 在 Java 中，给定某程序的 main ，如下，运行结果为（）。
+class Test2 { 
+      public static void main (String  []  args)  {
+         boolean x= true;
+         boolean y=false;
+         short z=20;
+     if((x!=true) & (y=true)) z++;
+     if((y==true) || (++z==22))  z++;
+       System. out .println( "z="+z);
+         }
+      }
+21
+在 Java 中，给定某程序的 main ，如下，运行结果为（）。
+class Test2  
+      public static void main (String  []  args)  {
+         boolean x = true;
+         boolean y = false;
+         short z = 20;
+     if((x！=true) &&(y=true)) z++;
+     if((y==true) || (++z==22))  z++;
+       System. out .println( "z="+z)；
+         }
+      }	  
+21	 
+在 Java 中，给定某程序的 main ，如下，运行结果为（）。
+class Test2  
+      public static void main (String  []  args)  {
+         boolean x= true;
+         boolean y=false;
+         short z=20;
+     if((x！=true) & (y=true)) z++;
+     if((y==true) | (++z==22))  z++;
+       System. out .println( "z="+z)；
+         }
+      }
+22
+
+6.在Java 中下面代码执行完之后的结果是什么（     ）。 
+	public class ExaminationDemo{ 
+	  public static void main(String[] args){ 
+	   int i=1; 
+	   int j=10; 
+	   do{ 
+	    i++;
+	    --j; 
+	   }while(i<5); 
+	    System.out.println(i);
+	    System.out.println(j);
+	  } 
+	}
+// 2 9
+   3 8
+   4 7
+   5 6
+	
+
+7.程序设计
+学生成绩等级化
+		0-60 不及格
+		60-70 及格
+		70-80 中等
+		80-90 良好
+		90-100 优秀
+	 
+	  
+	  
+	  
+	  打印矩阵;
+		1	0	0	0
+		0	1	0	0
+		0	0	1	0
+		0	0	0	1
+	  
+
+8.写LoopTest.java，
+  分别使用while/do/for循环实现1x2x...x10。
+
+
+
+
+
+
+
+
+
+
+ 

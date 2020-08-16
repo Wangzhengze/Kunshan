@@ -1,0 +1,237 @@
+1. java中注释的分类?
+单行注释//
+多行注释/**/
+文档注释 /***/ 
+   
+2. java中标示符的命名规则?判断下列哪个是正确的？
+A.int   B.$_Count   C.3M   D.b-7   E.Hello   F.bool    G.ms@d  
+H.D970   I.goto
+BEFH
+标识符：字母，数字,_,$
+不能以数字开头
+关键字不可以作为标识符
+
+3. java中有哪些常用的数据类型有哪些，它们的区别是什么？
+  基本数据类型：
+      整形：int long short byte
+	  浮点型:float double
+	  字符型:char
+	  布尔型:boolean
+  引用数据类型
+     数组类型
+	 类类型
+	 接口类型
+	 
+  
+4. 编程（参照exercise1）
+1）模仿Teacher类创建Student类
+   要求：Student类要描述姓名、性别、年龄
+2）模仿TeacherTest类创建StudentTest类
+要求：
+   a) 在StudentTest类中创建Student的对象
+   b) 为该对象的属性（姓名、性别、年龄）赋值
+   c) 将该对象的属性（姓名、性别、年龄）输出
+
+5. 类型转换之面试题,指出下面程序有问题的地方 
+    byte b1 = 3; 
+	byte b2 = 4; 
+	byte b3 = 3 + 4; 
+	byte b4 = b1 + b2; 
+	byte b5 = b1 + 4;
+	
+ b1和b2是两个变量,变量里面存储的值都是变化的,所以在程序运行中JVM是无法判断里面具体的值
+ byte类型的变量在进行运算的时候,会自动类型提升为int类型，所以int类型赋值给byte会导致内存溢出	
+  
+6. 面试题
+    int x = 4;
+    int y = (x++)+(++x)+(x*10); 
+    x,y值分别是多少?
+x=6
+y=70
+x++  先执行
+++x  先+后执行
+7. 面试题 
+    short s = 1; 
+    s = s + 1; 
+    short s = 1; 
+    s += 1; 
+    以上程序是否有问题,为什么?
+	
+	第二行有问题，short类型参与运算会自动提升为int类型，int类型
+	赋值给short类型，导致内存溢出。
+ 
+8.已知原码求补码？
+        0b10110100
+	反码：0b11001011
+	     +         1
+		 ------------------
+	补码：11001100
+
+   已知补码求原码？
+        0b11101110
+	反码：0b11101101
+	原码：0b10010010
+
+9.请分别计算出a,b,c的值?
+          int a = 10;
+	      int b = 10;
+	      int c = 10;
+		
+	      a = b++;	 a=10 b=11 
+	      c = --a;	 c=9   a=9 	
+	      b = ++a;	 b=10  a=10
+	      a = c--;   c=8  a=9
+10.&&和&的区别?
+    最终结果一样。
+    &&具有短路效果。左边是false，右边不执行。
+    &是无论左边是false还是true,右边都会执行
+
+11.System.out.println(3 < 2 ? 'a' : 98);的输出结果是什么; 
+  
+ b 
+  
+  
+ corejava 总结
+1.JRE和JDK的概述
+什么是jre?
+      包括Java虚拟机(JVM Java Virtual Machine)和Java程序所需的核心类库等，
+      如果想要运行一个开发好的Java程序，计算机中只需要安装JRE即可。
+      JRE:JVM+类库。 
+
+什么是jdk?
+      JDK是提供给Java开发人员使用的，其中包含了java的开发工具，也包括了JRE。
+      所以安装了JDK，就不用再单独安装JRE了。
+      其中的开发工具：编译工具(javac)  打包工具(jar)等
+      JDK:JRE+JAVA的开发工具。
+
+什么是JVM?
+  JAVA的虚拟机
+
+2.JDK安装
+   JAVA_HOME:jdk的安装路径;作用:找到jdk的安装目录
+   PATH:java相关命令所在的路径;作用:让我们在任何路径下，都可以执行相关的命令，所以需要把java的命令配置到path中
+   CLASSPATH:类加载路径
+
+3.JDK目录结构
+	bin:开发工具
+	include:头文件
+	db:自带的小型数据库
+	lib:类库
+	jre:java运行环境
+	src.zip：java源代码
+
+4.java的特点
+    开源   
+    简单易用 
+    跨平台
+    安全（代码安全校验器）
+
+5.字节码校验器：
+    1）代码符合JVM规范
+    2）不能破坏系统完整性
+    3）不能有栈溢出
+    4）参数类型要正确
+    5）类型转换要正确
+
+6.源文件：
+   1）以.java结尾
+   2）一个源文件中只能包含一个public class，文件名要与public class名相同
+   3）一个文件中可以有多个java类，但只能有一个是public的-->MathTest.java
+
+7.包：
+  1）管理一组相关的类
+  2）解决命名冲突问题
+
+javac -d bin src/Student.java src/StudentTest.java 
+java -cp bin com.briup.day03.StudentTest 
+
+8.注释
+  单行注释//
+  多行注释/**/
+  文档注释/***/
+
+7.分号：一句代码以;结束
+  块：{}这是代码块，所有的代码需要在代码块中编写
+  空格：空格在java中用来隔开多个关键字，在其他位置没有任何含义，只是为了java结构好看
+
+8.标识符
+   1.用在变量名、方法名、类名等的地方
+   2.命名规则：可以以字符，数字，下滑线$开头，不能使用数字开头
+   3.区分大小写
+   4.没有长度限制
+   5.推荐符合驼峰命名法
+     推荐类名首字母大写
+     推荐方法名和变量名首字母小写
+
+11.建议的命名规则
+   1.类名首字母大写，需要符合驼峰命名法
+   2.接口名称以大写字母开始
+   3.方法名以小写字母开始，需要符合驼峰命名法
+   4.变量名以小写字母开始
+   5.常数变量名大写字符
+
+9.java中的关键字
+     java中的关键字是程序代码中的特殊字符，包括：
+     类和接口的声名-----class extends implements interface
+     包引入和包声名-----import package
+     数据类型-------boolean byte char double float int long short 
+     流程控制语句-------break case continue default do else for if return switch while
+     异常处理--------catch finally throw throws try
+     修饰符----------public static abstract final native private protected synchronized transient volatile
+     操作符----------instanceof
+     创建对象------new
+     引用--------this super 
+     方法的返回类型----void
+
+10.变量的声名和赋值
+    1.变量的声名和赋值
+	    int a=10;
+	    数据类型 变量名 = 数据类型对应的值;
+	2.数据类型 变量名1,变量名2...;
+	    变量名1 = 数据类型对应的值;
+	    变量名2 = 数据类型对应的值;
+	    同时声明多个 该数据类型的变量,然后再赋值。
+   int a1;
+   a1=13;
+
+12.数据类型
+    基本数据类型：
+           （1）按照所占字节类型长度：
+			1个字节：byte  boolean   
+			0111 1111
+			+       1
+			-----------------
+			1000 0000
+            2^7-1  -2^7
+			2个字节: short  char（0-65535）
+			4个字节: int  float
+			8个字节: long  double
+           （2）按照数据类型分：
+			布尔型：boolean
+			字符型：char
+			整形  ：byte  int  short  long 
+			浮点型：float  double
+
+    引用数据类型
+       类类型
+	   接口类型
+	   数组类型
+
+常量优化机制，常量在参与运算的时候自动查看是否超出取值范围
+  
+byte ---->short-->int --->long -->float--->double 
+short ---> int---> long---> float---->double
+char --->int-->long --->float--->double
+
+隐式类型转换
+在参与运算的时候byte short char类型的数会自动提升为int类型的数参与运算
+表示范围小的数自动转换为表示范围大的 
+  
+  
+  
+  
+  
+  
+  
+  
+
