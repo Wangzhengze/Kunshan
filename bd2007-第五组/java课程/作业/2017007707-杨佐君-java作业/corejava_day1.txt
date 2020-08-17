@@ -1,0 +1,53 @@
+1.Java是由那门语言发展而来的！
+  C++
+
+2.和java相关的环境变量有那几个，它们有什么作用
+  JAVA_HOME PATH CLASSPATH
+
+3.java程序的执行过程
+	
+javac编译成class文件  java 类名 通过jvm编译成可执行的二进制文件
+  
+4.java的优秀特性
+   跨平台
+
+5.分别介绍jdk,jre,jvm的含义。
+
+JDK(Java Development Kit) 是 Java 语言的软件开发工具包(SDK)。在JDK的安装目录下有一个jre目录，里面有两个文件夹bin和lib，在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，而jvm和 lib合起来就称为jre。
+JRE（Java Runtime Environment，Java运行环境），包含JVM标准实现及Java核心类库。JRE是Java运行环境，并不是一个开发环境，所以没有包含任何开发工具（如编译器和调试器）
+JVM是Java Virtual Machine（Java虚拟机）的缩写，JVM是一种用于计算设备的规范，它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。
+
+6.java javac命令是干什么的？
+ javac负责的是编译，将.java文件编译成.class文件，当执行javac的时候，会启动java的编译器程序，对指定的扩展名为.java的文件进行编译，生成了jvm可识别的字节码文件，即.class文件（java的运行程序）
+java负责的是运行
+当执行java时，会启动jvm加载运行时所需要的类库，并执行.class文件
+
+7.gc是干什么的
+
+垃圾回收机制
+ 
+8.java类加载机制是什么?
+
+双亲委托机制 向上委托 向下加载 
+ 
+9.字节码校验器验证哪些内容
+  1.jvm是否符合编程规范
+  2. 转换类型是否正确
+  3.堆栈是否溢出
+
+10.java中三大顶级元素
+ 
+1.package
+  2.import
+  3.class
+   
+
+
+
+
+
+
+
+
+
+

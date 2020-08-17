@@ -1,0 +1,130 @@
+1、java历史
+SUN  是“Stanford  University  Network”
+
+2、Core  Java是Java语言的基础，其它Java技术均是构建在Core  Java基础之上。
+ 
+3、Core  Java课程学习什么?
+	1)  Java编程语法(字符集、条件语句、循环语句);
+       	2)  Java编程语言面向对象的概念；
+封装  继承  多态
+ 	3)  IO流；
+ 	4)  多线程；
+	5)  网络；
+
+4、JDK主要包括内容：  javac:将.java文件编译生产.class文件    java:运行.class文件  只需要提供文件名,不需要提供.class后缀
+
+5、java优点：
+
+              a. 提供一个解释环境
+                  一次编译到处运行: 跨平台；
+                  多线程：多线程编程的简单性是Java成为流行的服务器端开发语言的主要原因之一
+
+              b. 提供一个比较容易的方式编程
+                 1) 更健壮：没有指针(引用)、没有内存管理；
+                 2) 纯粹的面向对象的编程：在Java中认为一切均是对象，对象有属性以及改变属性值的方法。通过Java编程围绕
+                      着构建对象的模板、实例化对象、调用对象的方法和属性等来进行。
+              	 封装 继承 多态     
+
+6、 Java的程序结构：
+ 
+                a. 源文件：
+                   包含Java代码(按java语法规则编写的内容)的文件;
+
+                   特征：
+                   i.  以java作为后缀；
+                   ii. 可以包含多个类/接口；
+                   iii.名称与类名(只包含一个类/接口)或public修饰的类/接口(包含多个类/接口)同名;
+
+                   结构：
+                   i.  包的声明语句(可有可无，如有只能有一行，且位于最前面);
+                   ii. import语句(可有可无, 可有多行，紧跟着包的声明语句);
+                   iii.类的声明语句{};
+
+
+                b. 类：
+                   Java代码组织的单位, Java代码都是以一个个类形式组织的。用Java语言编写程序其实就是编写一个个类；
+                   
+                   一个类里的语句内容用大括号括起来，一个类里带有零至多个方法。
+                   
+                   结构： 
+                   i.  类的声明语句，例：
+                       public class HelloWorld 
+                   ii. 类的内容语句，用大括号括起来：
+                       (1) 属性；
+                       (2) 方法：                       
+
+                c. 方法：
+                   类似于其它语言里的函数或过程。方法里带有零至多行语句。
+
+                   结构： 
+                   i.  方法的声明语句，例：
+                       public static void main(String[] args) 
+ 
+                   ii. 方法体，用大括号括起来：
+                       (1) 属性；
+                       (2) Java语句;   
+
+                d. Main方法：
+                   
+                   Java虚拟机执行Java程序时，首先执行调用的方法。main方法又叫程序的入口方法或起点方法。不管你的程序有多大，
+                   不管你的程序有多少个类，一定都会有一个main()方法来作为程序的起点。
+
+7、 分号、块和, 标识符
+1) 每个语句短语以;结束 ;
+                2) 代码段以{}结束;所有的逻辑语句必须出现在{}中间
+                3) 空白处（空格、tab键、新行和回车（几个语句短语连接在一起））是无关紧要的。
+4) 类、方法和变量的名字
+                   java标识符以字母、_和$开头，不能以数字开头，后跟字母、数字、“_”和“$”的组合;
+                   大小写敏感
+                   没有长度限制。
+
+8、重要的java命令
+1编译java源文件
+Javac <options> <source file>
+ 2,执行类
+Java [-options] class [args1 args2 args3 ...]
+3,创建java文档
+Javadoc [option] [packagenames] [sourcefiles] 
+4,生成jar包
+jar {ctxu} [jar-file] [-C directory] files ...
+9、注释
+类型：1) 单行注释：
+                          //text——从"//"到本行结束的所有字符均作为注释而被编译器忽略
+                       2) 多行注释：
+                          /*text*/——从"/*"到"*/"间的所有字符会被编译器忽略
+  /**/多行注释，可以出现在任意位置(包括[]的内部),
+  但是不能出现在关键字的中间 e.g main—>ma/*test*/in 这是不允许的
+                       3) 文档注释：
+                          /** text */——从"/**"到"*/"间的所有字符会被编译器忽略。当这类注释出现在任何声明(如类的声明、类的成员变量的声明或者类的成员方法的声明)之前时，会作为JavaDoc文档的内容；
+
+
+
+10、关键字
+
+                 Java语言的关键字是程序代码中的特殊字符。包括：
+                 . 类和接口的声明——class, extends, implements(实现), interface
+                 . 包引入和包声明——import, package
+                 . 数据类型——boolean布尔, byte, char, double, float, int, long, short
+                 . 某些数据类型的可选值——false, true, null
+                 . 流程控制——break, case, continue, default, do, else, for, if, return, switch, while
+                 . 异常处理——catch, finally, throw, throws, try
+                 . 修饰符——abstract, final, native, private, protected, public, static, 
+   synchronized(同步锁), transient
+                 . 操作符——instanceof 比较类型是否一致
+                 . 创建对象——new
+                 . 引用——this引用当前对象, super引用父类对象
+                 . 方法返回类型——void 没有返回类型
+
+
+
+
+
+
+
+
+
+
+
+
+
+

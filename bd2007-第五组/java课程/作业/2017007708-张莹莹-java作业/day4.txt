@@ -1,0 +1,101 @@
+﻿1.创建一个能够存储六个int类型的变量的数组arrayOne
+	int[] arrayOne = new int[6];
+	int[] arrayOne = new int[]{6,6,6,6,6,6};
+	int[][] arr =new int[4][];
+2.打印一个四行五列的矩阵	
+每一个元素都是一个0-10的随机数(Math.random())
+	int[][] arr=new int[4][5];
+	for(int i=0;i<4;i++){
+		for(int j=0;j<5;j++)
+			arr[i][j] = (int)(Math.random()*11);
+		System.out.println(arr[i]);
+	}
+3.数组是一个对象吗？
+	是
+		
+4.设计一个程序当你输入一个数时可以计算各个位上的数字总和。
+	
+	int num = 321;
+	int g=num%10;
+	int s=(num/10)%10;
+	int b=num/100;
+	int sum=g+s+b;
+
+5.请设计程序：
+有一个长度为9的int数组，默认值都是6。
+用户如果输入一个5.那么第五个元素的值就是5；
+用户如果输入一个3.那么第三个元素的值就是3；
+	
+	import java.util.Arrays;
+
+		int[] arr=new int[9];
+		Arrays.fill(arr,6);
+		for(int i=0;i<arr.length;i++){
+			if(i+1==num)
+				arr[i]=num;
+			System.out.print(arr[i]);
+		}
+
+6.请设计程序：请将一个班的学生成绩的平均值求出，并求出低于平均值的学生姓名
+	1-tom-79
+	2-jack-87
+	3-lily-90
+	4-Bob-88
+	5-alex-90
+
+public class Student{
+		
+		private int id;
+		private String name;
+		private String score;
+
+		public void getName(){
+			return name;
+		}
+
+		public void setName(String name){
+			this.name=name;
+		}
+
+		public void getScore(){
+			return Score;
+		}
+
+		public void setScore(int Score){
+			this.score=score;
+		}
+
+		public Student(int id,String name,int score){
+			this.id=id;
+			this.name=name;
+			this.score=score;
+		}
+	
+
+	public static void main(){
+		Student s1=new Student(1,"tom",79);
+		Student s1=new Student(2,"jack",87);
+		Student s1=new Student(3,"lily",90);
+		Student s1=new Student(4,"Bob",88);
+		Student s1=new Student(5,"alex",90);
+
+		Student[] s=new Student[]{s1,s2,s3,s4,s5,s6};
+		int sum=0;
+		for(int i=0;i<s.length;i++){
+			sum += s[i].getScore();
+		}
+		int avg=sum/s.length;
+		System.out.println(avg);
+
+		for(int i=0;i<s.length;i++){
+			if(s[i].getScore()<avg){
+				System.out.println(s[i].getName());
+			}
+
+		}
+	}
+}
+
+
+（选做）请按照test文件夹中代码的注释来完成代码
+

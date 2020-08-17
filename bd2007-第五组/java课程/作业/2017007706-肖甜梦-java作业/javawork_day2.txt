@@ -1,0 +1,131 @@
+1. java中注释的分类?
+
+单行注释//
+多行注释/**/
+文档注释/***/
+   
+2. java中标示符的命名规则?判断下列哪个是正确的？
+
+A.int   B.$_Count   C.3M   D.b-7   E.Hello   F.bool    G.ms@d  
+H.D970   I.goto
+标识符：字母、数字、_、$
+不能以数字开头
+关键字不可以作为标识符
+
+3. java中有哪些常用的数据类型有哪些，它们的区别是什么？
+
+基本数据类型
+    整型：int byte short long
+    浮点型:double float
+    字符型:char
+    布尔型:boolean
+引用数据类型
+    类类型
+    数组类型
+    接口类型
+    
+4. 编程（参照exercise1）
+
+1）模仿Teacher类创建Student类
+   要求：Student类要描述姓名、性别、年龄
+public class Student{
+   public String name;
+   public String gender;
+   public int age;
+
+   public Student(){
+
+   }
+
+   public Student(String name,String gender,int age){
+
+	   this.name=name;
+	   this.gender=gender;
+	   this.age=age;
+   }
+   public void print(){
+      System.out.println("name:"+name);
+	  System.out.println("age:"+age);
+	  System.out.println("gender:"+gender);
+   }
+}
+
+
+2）模仿TeacherTest类创建StudentTest类
+要求：
+   a) 在StudentTest类中创建Student的对象
+   b) 为该对象的属性（姓名、性别、年龄）赋值
+   c) 将该对象的属性（姓名、性别、年龄）输出
+public class StudentTest{
+   public static void main(String[] args){
+
+     Student s1 = new Student();
+	 s1.name="lili";
+	 s1.gender="女";
+	 s1.age=23;
+	 s1.print();
+   }
+}
+
+5. 类型转换之面试题,指出下面程序有问题的地方 
+    byte b1 = 3; 
+	byte b2 = 4; 
+	byte b3 = 3 + 4; 
+	byte b4 = b1 + b2; 
+	byte b5 = b1 + 4;
+第四行和第五行，在参与运算时是int类型，赋值给byte类型再byte是错的
+  
+6. 面试题
+
+    int x = 4;
+    int y = (x++)+(++x)+(x*10); 
+    x,y值分别是多少?
+x=6 y=70
+
+7. 面试题 
+
+    short s = 1; 
+    s = s + 1;   有问题
+    short s = 1; 
+    s += 1; 
+    以上程序是否有问题,为什么?
+short类型在参与运算时是int类型 。。。
+
+8.已知原码求补码？
+
+          0b10110100
+反码：0b11001011
+补码：0b11001100（=反码加一）
+
+   已知补码求原码？
+        0b11101110
+反码：0b11101101（补码加一）
+原码：0b10010010
+
+
+9.请分别计算出a,b,c的值?
+
+          int a = 10;
+	      int b = 10;
+	      int c = 10;
+		
+	      a = b++;	  
+	      c = --a;	  	
+	      b = ++a;	
+	      a = c--;
+a=10 b=11
+
+a=9 c=9
+
+a=10 b=10
+
+a=9 c=8
+
+10.&&和&的区别?
+
+  &&前面是false后面不会执行
+
+11.System.out.println(3 < 2 ? 'a' : 98);的输出结果是什么; 
+
+ b(98对应asicc码中的b)
+

@@ -1,0 +1,97 @@
+1、写一个线程类NumThread,run方法中日依次打印1到100的数字，每打印一次就休眠一下，休眠时间随机0到2000毫秒之间
+测试方法中创建该类的俩个线程对象，如果要实现以下效果，则run方法中该如何去编写 t1和t2俩个线程对象，调用start方法开启之后，谁先打印完100个数字则谁先停止，停止的时候也要让另一个线程也结束运行
+
+import java.util.Random;
+
+public class NumThreadTest extends Thread {
+    private static boolean flag;
+    @Override
+    public void run() {
+        for(int i=1;i<=100;i++){
+            System.out.println(getName()+":"+i);
+            if(flag == true){
+                System.exit(0);
+            }
+            Random random = new Random();
+            try {
+                sleep(random.nextInt(200));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        flag = true;
+    }
+
+    public static void main(String[] args) {
+        NumThreadTest t1 = new NumThreadTest();
+        NumThreadTest t2 = new NumThreadTest();
+        t1.start();
+        t2.start();
+    }
+}
+
+
+2、线程对象有一个final方法:public  final  void  setPriority(int  newPriority)可以用来设置线程的优先级（最大优先级是10  最小是1  默认是5）
+设计一个实验，来测试优先级对线程的执行带来的影响，同时得出你的结论.  
+
+public class PropTest {
+    public final void setPriority(int newPriority) {
+        Thread t1 = new Thread("线程1"){
+            @Override
+            public void run() {
+                for (int i = 0;i<50;i++){
+                    System.out.println(getName()+":"+i);
+                }
+            }
+        };
+
+        Thread t2 = new Thread("线程2") {
+            @Override
+            public void run() {
+               for (int i=0;i<50;i++){
+                   System.out.println(getName()+":"+i);
+               }
+            }
+        };
+        t1.start();
+        t2.start();
+        t1.setPriority(Thread.MAX_PRIORITY);
+    }
+
+    public static void main(String[] args) {
+        PropTest t = new PropTest();
+        t.setPriority(Thread.MIN_PRIORITY);
+    }
+}
+
+
+3、把一个线程在启动之前设置为后台线程（setDaemon方法）,观察设置和不设置对运行结果所带来的影响。
+
+public class DaemonTest {
+    public static void main(String[] args) {
+       Thread t1 =  new Thread("线程1"){
+            @Override
+            public void run() {
+                for (int i=0;i<50;i++){
+                    System.out.println(getName()+":"+i);
+                }
+            }
+        };
+
+        Thread t2 = new Thread("线程2") {
+            @Override
+            public void run() {
+                for(int i=0;i<50;i++){
+                    System.out.println(getName()+":"+i);
+                }
+            }
+        };
+        t1.setDaemon(true);
+        t1.start();
+        t2.start();
+    }
+}
+结论：只要进程有一个前台线程在运行，这个进程就不会结束；但是如果一个进程只有后台线程在工作，那么这个进程就结束了。
+
+
+

@@ -1,0 +1,185 @@
+1. 完成ListTest.java测试java.util包下提供的List接口保存数据，删除数据，修改数据和两种遍历数据等(查询相应的API完成)
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class ListTest {
+	public static void main(String[] args) {
+		List list = new ArrayList();
+		//添加
+		list.add("abc");
+		list.add(12);
+		list.add(2);
+		list.add("bbb");
+		list.add("你好");
+		
+		//移出
+		//list.remove(0);
+		
+		//修改
+		list.set(1, 1);
+		System.out.println(list);
+		
+		//遍历
+		/*Iterator it = list.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}*/
+		
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i));
+		}
+		
+		for (Object object : list) {
+			System.out.println(object);
+		}
+	}
+
+}
+
+
+2. 完成SetTest.java测试java.util包下提供的Set接口保存数据，
+   删除数据，修改数据和二种遍历数据等(查询相应的API完成)
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class SetTest {
+	public static void main(String[] args) {
+		Set set = new HashSet();
+		set.add("12");
+		set.add("hello");
+		set.add("world");
+		
+		
+		//遍历
+		Iterator it = set.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		
+		//
+		for (Object object : set) {
+			System.out.println(object);
+		}
+	}
+
+}
+
+
+3.某中学有若干学生(学生对象放在一个List中),
+  每个学生有一个姓名属性、
+  班级名称属性(String)和考试成绩属性(int)，
+  某次考试结束后，每个学生
+  都获得了一个考试成绩。请打印出每个班级的总分和平均分。
+public class Student {
+	private String name;
+	private String className;
+	private int score;
+	public Student(String name, String className, int score) {
+		super();
+		this.name = name;
+		this.className = className;
+		this.score = score;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getClassName() {
+		return className;
+	}
+	public void setClassName(String className) {
+		this.className = className;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", className=" + className + ", score=" + score + "]";
+	}	
+}
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class StudentTest {
+	public static void main(String[] args) {
+		Student s1 = new Student("zs1","jd1501",86);
+		Student s2 = new Student("zs2","jd1501",85);
+		Student s3 = new Student("zs3","jd1501",70);
+		Student s4 = new Student("zs4","jd1501",82);
+		Student s5 = new Student("zs5","jd1501",65);
+		ArrayList<Student> list = new ArrayList<Student>();
+		list.add(s1);
+		list.add(s2);
+		list.add(s3);
+		list.add(s4);
+		list.add(s5);
+		
+		int sum = 0;
+		Iterator<Student> it = list.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			int score = s.getScore();
+			sum+=score;
+		}
+		System.out.println("班级总分："+sum);
+		System.out.println("班级的平均成绩："+sum/list.size());
+	}
+
+}
+
+4.MAP集合
+  现在有一个map集合如下：
+        Map<Integer,String> map = new HashMap<Integer, String>();
+        map.put(1, "张三丰");
+        map.put(2, "周芷若");
+        map.put(3, "阿牛哥");
+        map.put(4, "灭绝师太");
+
+        要求：
+        (1).遍历集合，并将序号与对应人名打印。
+        (2).向该map集合中插入一个编码为5姓名为李晓红的信息
+        (3).移除该map中的编号为1的信息
+        (4).将map集合中编号为2的姓名信息修改为"赵敏"
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class MapTest {
+        public static void main(String[] args) {Map<Integer,String> map = new HashMap<Integer, String>();
+        map.put(1, "张三丰");
+        map.put(2, "周芷若");
+        map.put(3, "阿牛哥");
+        map.put(4, "灭绝师太");
+        
+        /*Set<Integer> key = map.keySet();
+        for (Integer integer : key) {
+	System.out.println(integer+":"+map.get(integer));
+         }
+*/      
+        
+        Set<Entry<Integer, String>> entrySet = map.entrySet();
+        for (Entry entry : entrySet) {
+	System.out.println(entry);
+		}
+        
+        map.put(5, "李晓红");
+        map.remove(1);
+        map.put(2, "赵敏");
+        System.out.println(map);
+        
+	}
+
+}
+
+
+
+

@@ -1,0 +1,61 @@
+﻿元字符
+一） 作业：
+1.显示家目录中所有以.txt结尾的文件     
+  ls *.txt
+
+2.新建文件link1.txt、link2.txt、k.txt、ab.txt，执行ls *[link]* 和 ls *link*分别会有哪些文件被查出 
+  touch link1.txt link2.txt k.txt ab.txt
+  ls *[link]*  :link1.txt  link2.txt  k.txt
+  ls *link*    :link1.txt  link2.txt
+
+  
+3.查看2008年8月份的日历
+   cal 8 2018
+
+4.将当前时间输出到time.txt
+   date > time.txt
+
+5.在Unix中?的作用
+   ?代表单个字符
+
+6.;和|的异同
+  ;和|都是用来连接多个命令
+  ;连接的多个命令间没有任何联系
+  |连接的多个命令中前一个命令的输出作为下一个命令的输入
+ 
+7.查看/etc下所有文件的详细信息，并将这些输出信息存储到以自己名字命名的文件中；
+  查看文件/etc/passwd的内容，并将这些内容追加到上述文件的末尾
+    ls -al > briup.txt
+    cat /etc/passwd >> briup
+  
+文本操作
+一）
+作业：
+1.新建c.txt具有a.txt、b.txt的内容
+   cat a.txt b.txt > c.txt
+
+ 清空c.txt文件的内容   
+   cat /dev/null > c.txt
+
+3.cat和more的异同
+  都是用来读取文件中的内容，文件内容比较多是more会分屏显示
+
+4.将2008年的日历输出到a.txt；将a.txt内容显示在屏幕上，并同时显示行号；
+   cal 2008 > a.txt
+   cat -n a.txt
+
+ 
+5.将a.txt、b.txt的内容合并，输出到c.txt中
+   cat a.txt b.txt > c.txt
+
+vi编辑器
+一）
+1.vi有哪三种模式及如何进行相互切换
+                 a i o
+     命令行模式 --------> 输入模式
+                 esc
+     输入模式 ----------> 命令行模式
+                esc+: / ?
+     命令行模式---------> 底行模式
+
+主提示符：PSI=内容

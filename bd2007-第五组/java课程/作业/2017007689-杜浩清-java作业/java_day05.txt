@@ -1,0 +1,327 @@
+1.请设计程序：
+有一个长度为9的int数组，默认值都是6。
+用户如果输入一个5.那么第五个元素的值就是5；
+用户如果输入一个3.那么第三个元素的值就是3；
+import java.util.Scanner;
+import java.util.Arrays;
+public class Test1 {
+
+   public static void main(String[] args){
+
+     Scanner sc = new Scanner(System.in);
+	 int num = sc.nextInt();
+	 int[] arr = new int[9];
+	 Arrays.fill(arr,6);
+	 for(int i=0;i<arr.length;i++){
+       if(i+1 == num){
+          arr[i] = num;
+	   }
+	   System.out.print(arr[i]);
+
+	 }
+   }
+
+}
+
+
+2.请设计程序：请将一个班的学生成绩的平均值求出，
+  并求出低于平均值的学生姓名
+
+  1-tom-79
+  2-jack-87
+  3-lily-90
+  4-Bob-88
+  5-alex-90
+
+public class Student{
+  public int id;
+  public String name;
+  public double score;
+
+  public Student(int id,String name,double score){
+	  this.id=id;
+	  this.name=name;
+	  this.score=score;
+
+  }
+  public int getId(){
+     return id;
+  }
+
+  public String getName(){
+    return name;
+
+  }
+
+  public double getScore(){
+     return score;
+  }
+
+}
+
+public class StudentTest{
+  public static void main(String[] args){
+
+    Student s1 = new Student(1,"tom",79);
+    Student s2 = new Student(2,"jack",87);
+    Student s3 = new Student(3,"lily",90);
+    Student s4 = new Student(4,"bob",88);
+    Student s5 = new Student(5,"alies",90);
+	Student[] stu = new Student[]{s1,s2,s3,s4,s5};
+	int sum = 0;
+	int avg = 0;
+	for(int i=0;i<stu.length;i++){
+       sum+=stu[i].getScore();
+	}
+	avg = sum/stu.length;
+	System.out.println("学生的平均成绩为："+avg);
+  
+
+  for(int j=0;j<stu.length;j++){
+     if((stu[j].getScore()) < avg){
+       System.out.println("低于平均成绩的学生："+stu[j].getName());
+	 }
+  }
+ }
+
+}
+
+3.新建一个Drug（药品）类，有如下属性
+名字 name
+类型 type
+价格 price
+public class Drug {
+    private String type;
+    private String name;
+    private double price;
+
+    public Drug(String type, String name, double price) {
+        this.type = type;
+        this.name = name;
+        this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+}
+
+新建一个Doctor（医生）类，有如下属性
+姓名 name
+部门 department
+电话 tel
+public class Doctor{
+   private String name;
+   private String department;
+   private String tel;
+   public Doctor(String name,String department,String tel){
+	   this.name=name;
+	   this.department=department;
+	   this.tel=tel;
+
+   }
+   public String getName(){
+      return name;
+   }
+
+   public void setName(String name){
+      this.name=name;
+   }
+}
+
+
+新建一个Nurse（护士）类，有如下属性
+名字 name
+部门 department
+电话 tel
+public class Nurse{
+   private String name;
+   private String department;
+   private String tel;
+   public Doctor(String name,String department,String tel){
+	   this.name=name;
+	   this.department=department;
+	   this.tel=tel;
+
+   }
+   public String getName(){
+      return name;
+   }
+
+   public void setName(String name){
+      this.name=name;
+   }
+}
+
+新建一个SickBed（病床）类，有如下属性
+楼层 floor
+房间 room
+床号 id
+public class SicBed {
+    private int floor;
+    private int room;
+    private int id;
+
+    public SicBed(int floor, int room, int id) {
+        this.floor = floor;
+        this.room = room;
+        this.id = id;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public int getRoom() {
+        return room;
+    }
+
+    public void setRoom(int room) {
+        this.room = room;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+}
+
+新建一个Patient（患者）类，有如下属性
+姓名 name
+身份证 card_id
+性别 sex
+年龄 age
+public class Patient {
+    private String name;
+    private String card_id;
+    private String sex;
+    private int age;
+
+    public Patient(String name, String card_id, String sex, int age) {
+        this.name = name;
+        this.card_id = card_id;
+        this.sex = sex;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCard_id() {
+        return card_id;
+    }
+
+    public void setCard_id(String card_id) {
+        this.card_id = card_id;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+新建一个Case（病例）类 有如下属性：
+患者 patie
+病床 sickBed
+主治医师 doctor
+跟床护士 nurse
+用药记录 useDrug
+public class Case {
+    private Patient p;
+    private SicBed s;
+    private Doctor d;
+    private Nurse n;
+    private Drug drug;
+
+    public Case(Patient p, SicBed s, Doctor d, Nurse n, Drug drug) {
+        this.p = p;
+        this.s = s;
+        this.d = d;
+        this.n = n;
+        this.drug = drug;
+    }
+
+    public Patient getP() {
+        return p;
+    }
+
+    public void setP(Patient p) {
+        this.p = p;
+    }
+
+    public SicBed getS() {
+        return s;
+    }
+
+    public void setS(SicBed s) {
+        this.s = s;
+    }
+
+    public Doctor getD() {
+        return d;
+    }
+
+    public void setD(Doctor d) {
+        this.d = d;
+    }
+
+    public Nurse getN() {
+        return n;
+    }
+
+    public void setN(Nurse n) {
+        this.n = n;
+    }
+
+    public Drug getDrug() {
+        return drug;
+    }
+
+    public void setDrug(Drug drug) {
+        this.drug = drug;
+    }
+}
